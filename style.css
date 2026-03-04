@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #0d47a1;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+/* Container */
+.listing-container {
+    width: 92%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+/* Category Title */
+.category-title {
+    margin-bottom: 20px;
+    color: #0d47a1;
+    border-left: 5px solid #0d47a1;
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+/* Property Card */
+.property-card {
+    background-color: white;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    padding-bottom: 20px;
+}
+
+/* Property Number */
+.property-number {
+    background-color: #e3f2fd;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: #0d47a1;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Image Gallery */
+.image-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+}
+
+.image-gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* Property Details */
+.property-details {
+    padding: 0 20px;
+}
+
+.price {
+    font-weight: bold;
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+.contact {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0d47a1;
+    color: white;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+/* Responsive for larger screens */
+@media (min-width: 768px) {
+
+    .image-gallery {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .image-gallery img {
+        width: 48%;
+    }
+}
