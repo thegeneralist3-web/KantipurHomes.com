@@ -61,13 +61,16 @@ header h1 {
 /* Image Gallery */
 .image-gallery {
     display: flex;
-    flex-direction: column;
     gap: 15px;
     padding: 15px;
+    overflow-x: auto;       /* allows horizontal scroll */
+    scroll-behavior: smooth; /* smooth scrolling */
+    -webkit-overflow-scrolling: touch; /* smooth scroll on mobile */
 }
 
 .image-gallery img {
-    width: 100%;
+    flex: 0 0 auto;       /* prevents shrinking, keeps image width */
+    width: 300px;         /* set a fixed width for each image */
     height: auto;
     display: block;
     border-radius: 8px;
@@ -110,4 +113,5 @@ footer {
     .image-gallery img {
         width: 48%;
     }
+
 }
