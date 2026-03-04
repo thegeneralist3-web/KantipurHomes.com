@@ -22,19 +22,46 @@ header {
 
 header h1 {
     margin-bottom: 10px;
-    font-size: 26px;
+    font-size: 28px;
+}
+
+header p {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.contact-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff6f00;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.contact-btn:hover {
+    background-color: #e65100;
 }
 
 /* Container */
-.listing-container {
-    width: 92%;
+.container {
+    width: 90%;
     max-width: 1200px;
-    margin: 40px auto;
+    margin: 0 auto;
 }
 
 /* Category Title */
 .category-title {
-    margin-bottom: 20px;
+    margin: 40px 0 20px;
     color: #0d47a1;
     border-left: 5px solid #0d47a1;
     padding-left: 10px;
@@ -65,22 +92,25 @@ header h1 {
     border-bottom: 1px solid #ddd;
 }
 
-/* Image Gallery / Carousel */
+/* Image/Video Gallery */
 .image-gallery {
     display: flex;
     gap: 15px;
     padding: 15px;
     overflow-x: auto;
     scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
 }
 
-.image-gallery img {
+.image-gallery img,
+.image-gallery video {
     flex: 0 0 auto;
     width: 300px;
     height: auto;
-    display: block;
     border-radius: 8px;
+}
+
+.image-gallery video {
+    max-height: 200px;
 }
 
 .image-gallery::-webkit-scrollbar {
@@ -108,29 +138,13 @@ header h1 {
     margin-bottom: 10px;
 }
 
-.details-list {
+.property-details ul {
     margin-top: 10px;
     margin-bottom: 15px;
     list-style-type: disc;
     padding-left: 20px;
 }
 
-.contact-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #0d47a1;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.contact-btn:hover {
-    background-color: #08306b;
-}
-
-/* Footer */
 footer {
     text-align: center;
     padding: 20px;
@@ -140,21 +154,22 @@ footer {
     font-size: 14px;
 }
 
-/* Responsive Layout */
+/* Responsive */
 @media(min-width: 768px){
-    .image-gallery img {
+    .image-gallery img,
+    .image-gallery video {
         width: 350px;
     }
 }
 
 @media(min-width: 1024px){
-    .listing-container {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
+    .property-card {
+        display: flex;
+        flex-direction: column;
     }
-    .image-gallery img {
+    .image-gallery img,
+    .image-gallery video {
         width: 100%;
-        max-width: 300px;
+        max-width: 400px;
     }
 }
