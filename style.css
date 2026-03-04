@@ -1,8 +1,9 @@
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Noto Sans Devanagari', Arial, sans-serif;
 }
 
 body {
@@ -21,13 +22,13 @@ header {
 
 header h1 {
     margin-bottom: 10px;
-    font-size: 24px;
+    font-size: 26px;
 }
 
 /* Container */
 .listing-container {
     width: 92%;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 40px auto;
 }
 
@@ -37,7 +38,7 @@ header h1 {
     color: #0d47a1;
     border-left: 5px solid #0d47a1;
     padding-left: 10px;
-    font-size: 20px;
+    font-size: 22px;
 }
 
 /* Property Card */
@@ -47,6 +48,12 @@ header h1 {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     padding-bottom: 20px;
+    transition: 0.3s;
+}
+
+.property-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
 /* Property Number */
@@ -58,22 +65,31 @@ header h1 {
     border-bottom: 1px solid #ddd;
 }
 
-/* Image Gallery */
+/* Image Gallery / Carousel */
 .image-gallery {
     display: flex;
     gap: 15px;
     padding: 15px;
-    overflow-x: auto;       /* allows horizontal scroll */
-    scroll-behavior: smooth; /* smooth scrolling */
-    -webkit-overflow-scrolling: touch; /* smooth scroll on mobile */
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
 }
 
 .image-gallery img {
-    flex: 0 0 auto;       /* prevents shrinking, keeps image width */
-    width: 300px;         /* set a fixed width for each image */
+    flex: 0 0 auto;
+    width: 300px;
     height: auto;
     display: block;
     border-radius: 8px;
+}
+
+.image-gallery::-webkit-scrollbar {
+    height: 8px;
+}
+
+.image-gallery::-webkit-scrollbar-thumb {
+    background-color: #0d47a1;
+    border-radius: 4px;
 }
 
 /* Property Details */
@@ -84,12 +100,34 @@ header h1 {
 .price {
     font-weight: bold;
     color: #2e7d32;
+    background-color: #e8f5e9;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    display: inline-block;
     margin-bottom: 10px;
 }
 
-.contact {
-    margin-top: 15px;
+.details-list {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.contact-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0d47a1;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
     font-weight: bold;
+    transition: 0.3s;
+}
+
+.contact-btn:hover {
+    background-color: #08306b;
 }
 
 /* Footer */
@@ -102,16 +140,21 @@ footer {
     font-size: 14px;
 }
 
-/* Responsive for larger screens */
-@media (min-width: 768px) {
-
-    .image-gallery {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
+/* Responsive Layout */
+@media(min-width: 768px){
     .image-gallery img {
-        width: 48%;
+        width: 350px;
     }
+}
 
+@media(min-width: 1024px){
+    .listing-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .image-gallery img {
+        width: 100%;
+        max-width: 300px;
+    }
 }
